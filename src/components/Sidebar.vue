@@ -1,40 +1,22 @@
 <template>
-  <div class="relative bg-purple-50 dark:bg-gray-800">
+  <div class="relative bg-blue-900 w-full dark:bg-gray-800">
     <div class="flex flex-col sm:flex-row sm:justify-around">
-      <div class="w-72 h-screen">
+      <div class="w-60 h-screen">
         <div class="flex items-center justify-start mx-6 mt-10">
           <!--          <img class="h-10" src="./src/assets/img/svg/nexah.svg"/>-->
-          <span class="text-gray-600 dark:text-gray-300 ml-4 text-2xl font-bold">
-            {{ Titre }}
-          </span>
+          <span class="text-white dark:text-gray-300 ml-4 text-2xl font-bold">
+                    {{ Titre }}
+                </span>
         </div>
         <nav class="mt-10 px-6 ">
 
-          <!--          Bouton menu accueil-->
-          <RouterLink to="/">
-            <a @click="clickMenu(1)" v-bind:class="effect[0].active?clickClass:''"
-               class="hover:text-gray-800 hover:bg-gray-100 flex items-center p-2 my-6 transition-colors dark:hover:text-white dark:hover:bg-gray-600 duration-200  text-gray-600 dark:text-gray-400  "
-               href="#">
-              <svg width="20" height="20" fill="currentColor" class="m-auto" viewBox="0 0 2048 1792"
-                   xmlns="http://www.w3.org/2000/svg">
-                <path
-                    d="M1024 1131q0-64-9-117.5t-29.5-103-60.5-78-97-28.5q-6 4-30 18t-37.5 21.5-35.5 17.5-43 14.5-42 4.5-42-4.5-43-14.5-35.5-17.5-37.5-21.5-30-18q-57 0-97 28.5t-60.5 78-29.5 103-9 117.5 37 106.5 91 42.5h512q54 0 91-42.5t37-106.5zm-157-520q0-94-66.5-160.5t-160.5-66.5-160.5 66.5-66.5 160.5 66.5 160.5 160.5 66.5 160.5-66.5 66.5-160.5zm925 509v-64q0-14-9-23t-23-9h-576q-14 0-23 9t-9 23v64q0 14 9 23t23 9h576q14 0 23-9t9-23zm0-260v-56q0-15-10.5-25.5t-25.5-10.5h-568q-15 0-25.5 10.5t-10.5 25.5v56q0 15 10.5 25.5t25.5 10.5h568q15 0 25.5-10.5t10.5-25.5zm0-252v-64q0-14-9-23t-23-9h-576q-14 0-23 9t-9 23v64q0 14 9 23t23 9h576q14 0 23-9t9-23zm256-320v1216q0 66-47 113t-113 47h-352v-96q0-14-9-23t-23-9h-64q-14 0-23 9t-9 23v96h-768v-96q0-14-9-23t-23-9h-64q-14 0-23 9t-9 23v96h-352q-66 0-113-47t-47-113v-1216q0-66 47-113t113-47h1728q66 0 113 47t47 113z">
-                </path>
-              </svg>
-              <span class="mx-4 text-lg font-normal">
-                        Accueil
-                    </span>
-              <span class="flex-grow text-right">
-                    </span>
-            </a>
-          </RouterLink>
-          <!--          Bouton menu accueil-->
-
-
           <!--          Bouton menu Paiement-->
-          <RouterLink to="/payment">
-            <a @click="clickMenu(2)" v-bind:class="effect[1].active?clickClass:''"
-               class="hover:text-gray-800 hover:bg-gray-100 flex items-center p-2 my-6 transition-colors dark:hover:text-white dark:hover:bg-gray-600 duration-200  dark:border-gray-300 text-gray-800 dark:text-gray-100   dark:bg-gray-600"
+          <RouterLink :to="'/'+' '">
+            <a @click="clickMenu(1)" v-bind:class="effect[0].active?clickClass:''"
+               class="hover:text-gray-800 hover:bg-gray-100 flex items-center
+               p-2 my-6 transition-colors dark:hover:text-white
+               dark:hover:bg-gray-600 duration-200  dark:border-gray-300
+               text-white dark:text-gray-100   dark:bg-gray-600"
                href="#">
               <svg width="20" height="20" fill="currentColor" class="m-auto" viewBox="0 0 2048 1792"
                    xmlns="http://www.w3.org/2000/svg">
@@ -54,8 +36,10 @@
 
           <!--          menu Historiqque-->
           <RouterLink to="/history">
-            <a @click="clickMenu(3)" v-bind:class="effect[2].active?clickClass:''"
-               class="hover:text-gray-800 hover:bg-gray-100 flex items-center p-2 my-6 transition-colors dark:hover:text-white dark:hover:bg-gray-600 duration-200  text-gray-600 dark:text-gray-400  "
+            <a @click="clickMenu(2)" v-bind:class="effect[1].active?clickClass:''"
+               class="hover:text-gray-800 hover:bg-gray-100 flex items-center
+                p-2 my-6 transition-colors dark:hover:text-white
+                dark:hover:bg-gray-600 duration-200  text-white dark:text-gray-400  "
                href="#">
               <svg width="20" height="20" fill="currentColor" class="m-auto" viewBox="0 0 2048 1792"
                    xmlns="http://www.w3.org/2000/svg">
@@ -75,8 +59,10 @@
 
           <!--          Liste d'utilisateur-->
           <RouterLink to="/listuser">
-            <a @click="clickMenu(4)" v-bind:class="effect[3].active?clickClass:''"
-               class="hover:text-gray-800 hover:bg-gray-100 flex items-center p-2 my-6 transition-colors dark:hover:text-white dark:hover:bg-gray-600 duration-200  text-gray-600 dark:text-gray-400  "
+            <a @click="clickMenu(3)" v-bind:class="effect[2].active?clickClass:''"
+               class="hover:text-gray-800 hover:bg-gray-100 flex items-center
+               p-2 my-6 transition-colors dark:hover:text-white dark:hover:bg-gray-600
+                duration-200 text-white dark:text-gray-400  "
                href="#">
               <svg width="20" height="20" class="m-auto" fill="currentColor" viewBox="0 0 2048 1792"
                    xmlns="http://www.w3.org/2000/svg">
@@ -85,7 +71,7 @@
                 </path>
               </svg>
               <span class="mx-4 text-lg font-normal">
-                        Liste des employées
+                        Fournisseurs
                     </span>
               <span class="flex-grow text-right">
                     </span>
@@ -100,14 +86,17 @@
 </template>
 
 <script>
+// import Cookies from "js-cookie";
+
 export default {
   name: "Sidebar",
   data() {
     return {
       icon: './src/assets/img/svg/nexah.svg',
-      Titre: "Nexah Employee Pay",
-      clickClass: "border-r-4  border-blue-600 bg-gray-200",
-      position:0,
+      Titre: "Supplier Pay",
+      clickClass: "border-r-4  border-white ",
+      position: 0,
+      // routeIndex : '',
       effect: [
         {position: 1, active: false},
         {position: 2, active: false},
@@ -119,42 +108,69 @@ export default {
     }
   },
   methods: {
+
+    //Methode pour detecter sur quel page on a cliquer afin de mettre
+    //la barre vertical de droite
     clickMenu(position) {
-      this.effect.map(data => {
-        if (position == data.position) {
-          console.log(data.active)
-          data.active = true
-          this.position = data.position
-          console.log(data.position)
-          console.log(data.active)
-          this.effect.map(d => {
-            if (d.position != position) {
-              d.active = false;
+      let i = 0
+      //Parcourir la liste effect pour la mettre a jour
+      //pour l'element sur lequel on a cliquer on change sa valeur active a true charge
+      //la variable position par la valeur de sa position
+      //Ce qui permet a notre template de détecté l'élément sur lequel il doit mettre la barre vertical
+      // de droite.
+      //Pour les elements qui n'ont pas été cliquer on met leur active a false de tel sorte que
+      // la barre vertical se retire sur l'élement précédent
+      for (i; i < this.effect.length; i++) {
+        if (position === this.effect[i].position) {
+          this.effect[i].active = true
+          this.position = this.effect[i].position
+
+          let j = 0
+          for (j; j < this.effect.length; j++) {
+            if (this.effect[j].position !== position) {
+              this.effect[j].active = false
             }
-          })
+          }
         }
-      })
+      }
+      //
+      //
+      // this.effect.map(data => {
+      //   if (position === data.position) {
+      //     data.active = true
+      //     this.position = data.position
+      //     this.effect.map(d => {
+      //       if (d.position !== position) {
+      //         d.active = false;
+      //       }
+      //     })
+      //   }
+      // })
     }
   },
   // git remote add origin  https://USERNAME:PASSWORD@github.com/username/reponame.git
-  mounted(){
-    switch (this.$route.path){
+  mounted() {
+    // this.routeIndex = this.$route.params.code !== undefined?this.$route.params.code:Cookies.get('secret-code')
+      switch (this.$route.path) {
       case '/':
         this.effect[0].active = true
-        break
-      case "/payment":
-        this.effect[1].active = true
+        // this.$router.push('/' + Cookies.get('secret-code'))
         break
       case "/history":
+        this.effect[1].active = true
+        break
+      case "/listuser":
         this.effect[2].active = true
         break
-      case "listuser":
-        this.effect[3].active = true
-        break
+        default:
+          this.effect[0].active = true
+          // this.$router.push('/' + Cookies.get('secret-code'))
+          break
     }
   }
 }
 </script>
+
 
 <style scoped>
 

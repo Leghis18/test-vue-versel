@@ -5,6 +5,8 @@ import routes from './Router/Routes'
 import './assets/tailwind.css'
 import vSelect from 'vue-select'
 import 'vue-select/dist/vue-select.css';
+
+
 Vue.use(VueRouter)
 Vue.component('v-select', vSelect)
 
